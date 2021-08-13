@@ -1,9 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+// import logo from './logo.svg';
+// import './App.css';
+import React from 'react'
+
+import Counter from './components/counter.component'
 
 function App() {
   return (
-    <h1>Hello, World!</h1>
+    <>
+    <Counter />
+  </>
   );
 }
 
