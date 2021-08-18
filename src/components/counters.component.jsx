@@ -6,17 +6,12 @@ class Counters extends Component {
     state = {
         counters: [
             {id: 0, value: 0},
-            {id: 1, value: 0},
-            {id: 2, value: 0},
-            {id: 3, value: 0},
+            {id: 1, value: 5},
+            {id: 2, value: 9},
+            {id: 3, value: 1},
             {id: 4, value: 0},
         ]
     };
-
-    // constructor(){
-    //     super();
-    //     this.handleReset = this.handleReset.bind(this)
-    // }
 
     handleReset = () => {
         const all_counters = this.state.counters.map((counter, index) => {
@@ -37,11 +32,14 @@ class Counters extends Component {
 
     handleDecrement = (id) => {
         const counters = this.state.counters.map((counter, idx) => {
-            if(counter.id === id) return { id: idx, value: counter.value-1};
+            if(counter.value !== 0){
+                if(counter.id === id) return { id: idx, value: counter.value-1};
+            }
             return counter;
         });
         this.setState({counters: counters})
     }
+
     render() {
         return (
             <>
